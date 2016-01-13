@@ -2,15 +2,27 @@ var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   
-  var stack = {storage: {}, size: 0};
+  var stack = {storage: {}, count: 0};
   _.extend(stack, stackMethods);
   return stack;
 };
 
 var stackMethods =  {
-  size: function() {  
-  return 0;
+  size: function() {   
+    return this.count;
+  },
+  push: function(value) {   
+    this.count++;
+    this.storage[this.count] = value;
+  },
+  pop: function() {
+      
   }
 };
 
 //Stack.size()
+
+
+// it('reports a size of zero for a new stack', function() {
+//         expect(stack.size()).to.equal(0);
+//       });
