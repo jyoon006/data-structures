@@ -18,7 +18,9 @@ var stackMethods =  {
   pop: function() {
     var temp = this.storage[this.count];
     delete this.storage[this.count];
-    this.count--;
+    if(this.count > 0) {
+      this.count--;
+  	}
     return temp;
   }
 };
