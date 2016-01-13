@@ -4,7 +4,6 @@ var Queue = function(){
   // Use an object with numeric keys to store values
   var storage = {};
   var count = 0;
-  //var startingPoint = 0;
   var endingPoint = 0;
   // Implement the methods below
 
@@ -29,11 +28,6 @@ var Queue = function(){
   
   return someInstance;
 };
-
-//{2:b, 3: c, 4: d}
-// count: 3
-// ending point: 4
-// startingPoint = endingPoint - (count - 1);
 
 
 
