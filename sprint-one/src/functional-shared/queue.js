@@ -24,8 +24,16 @@ var queueMethods = {
   },
   
   dequeue: function () {
-    
+    var temp = this.storage[this.dequeueCount];
+    delete this.storage[this.dequeueCount];
+    this.dequeueCount++;
+    if (this.count > 0) {
+      this.count--;
+    }
+    return temp;
   }
 };
+
+
 
 
