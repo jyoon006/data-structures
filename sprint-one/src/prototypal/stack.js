@@ -11,14 +11,20 @@ var Stack = function() {
 //object.create(stackMethods)
 
 var stackMethods = {
-    push: function() {
-
+    push: function(value) {
+      this.counter++;
+      this.list[this.counter] = value;
     },
     pop: function() {
-  
+      var temp = this.list[this.counter];
+      delete this.list[this.counter];
+      if (this.counter > 0) {
+        this.counter--;
+      }
+      return temp;
     },
     size: function() {
-      return 0;
+      return this.counter;
     }      
   
 
