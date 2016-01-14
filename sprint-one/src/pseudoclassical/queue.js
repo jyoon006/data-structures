@@ -12,3 +12,9 @@ Queue.prototype.size = function () {
 Queue.prototype.enqueue = function (value) {
   this.count++;
 }
+
+Queue.prototype.dequeue = function () {
+  if (this.count > 0) {
+    this.count--;
+  }
+}
