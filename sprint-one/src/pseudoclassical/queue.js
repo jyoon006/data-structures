@@ -3,4 +3,6 @@ var Queue = function() {
   // but try not not reference your old code in writing the new style.
 };
 
-
+Queue.prototype.size = function () {
+  return 0;
+}
