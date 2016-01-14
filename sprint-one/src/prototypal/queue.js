@@ -12,6 +12,9 @@ var queueMethods = {
   },
   enqueue: function() { 
     this.count++; 
+  },
+  dequeue: function() {
+    this.count--;
   }
 };
 
