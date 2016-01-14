@@ -24,5 +24,5 @@ Queue.prototype.dequeue = function () {
   if (this.count > 0) {
     this.count--;
   }
-  return temp;g
+  return temp;
 }
