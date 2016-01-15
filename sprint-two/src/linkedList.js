@@ -32,8 +32,20 @@ var LinkedList = function(){
     return temp;
   };
   
-  list.contains = function(target){
-
+  list.contains = function(target, node){
+    // sets node for testing to head if one was not provided
+    node = node || list.head;
+    // returns true if the value equals the target
+    if (node.value === target) {
+      return true;
+    // runs contains on the next node if there is a next node
+    } else if (node.next) {
+      return list.contains(target, node.next);
+    // if the current nodes value doesn't equal the target
+    // and doesn't have a next node then returns false;
+    } else {
+      return false;
+    }
   }
   
   return list;
@@ -50,4 +62,9 @@ var Node = function(value){
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ 
+ addToTail: O(1)
+ removeHead: O(1)
+ contains: O(n)
+ 
  */
