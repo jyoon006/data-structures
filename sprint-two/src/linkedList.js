@@ -4,7 +4,19 @@ var LinkedList = function(){
   list.tail = null;
 
   list.addToTail = function(value){
-
+    // runs if no tail is defined
+    if (list.tail === null){
+      // creates new node at tail with passed in value
+      list.tail = new Node(value);
+      // points head at said new tail
+      list.head = list.tail;
+      // runs if there is an existing tail
+    } else {
+      // creates new node at the current tails next property
+      list.tail.next = new Node(value);
+      // sets the tail to said new node
+      list.tail = list.tail.next;
+    }
   };
 
   list.removeHead = function(){
