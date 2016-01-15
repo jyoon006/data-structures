@@ -18,25 +18,19 @@ Graph.prototype.addNode = function(node){
 
 // ------------------------
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
-Graph.prototype.contains = function(node){
-  for(var key in this.nodes){
-    if (this.nodes[key].value === node) {
-      return true;
-    }
+Graph.prototype.contains = function(node) {
+  if(this.nodes[JSON.stringify(node)]) {
+    return true;
   }
-  return false;
+  else {
+  	return false;
+  }
 };
 
 // ------------------------
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node){
-  for(var key in this.nodes){
-    if (this.nodes[key].value === node) {
-      delete this.nodes[key];
-      return true;
-    }
-  }
-  return false;
+  delete this.nodes[JSON.stringify(node)];
 };
 
 // ------------------------
