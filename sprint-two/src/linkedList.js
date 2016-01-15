@@ -31,10 +31,20 @@ var LinkedList = function(){
     // heads value if there was
     return temp;
   };
-
-  list.contains = function(target){
-  };
-
+  
+  list.contains = function(target, node){
+    node = node || list.head;
+    if(node.value === target) {
+      return true;
+    }
+    else if(node.next) {
+      return list.contains(target, node.next);
+    }
+    else {
+      return false;
+    }
+  }
+  
   return list;
 };
 
@@ -74,15 +84,7 @@ new Node(42)
 node4.value = 42
 node4.next = null
 
-5
 
-found = false
-check(sValue)
-if this value = sValue
-found = true
-else if this.next !=== null
-  found = check(this.next)
-return found
 
 
 */
