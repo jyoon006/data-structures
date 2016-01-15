@@ -32,17 +32,8 @@ var LinkedList = function(){
     return temp;
   };
   
-  list.contains = function(target, node){
-    node = node || list.head;
-    if(node.value === target) {
-      return true;
-    }
-    else if(node.next) {
-      return list.contains(target, node.next);
-    }
-    else {
-      return false;
-    }
+  list.contains = function(target){
+
   }
   
   return list;
@@ -60,31 +51,3 @@ var Node = function(value){
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
-//{head: value, tail: 4}
-
-/*
-
-linkedList1
-head -> node2
-tail -> node4
-
-linkedList1.addToTail(12)
-new Node(12)
-node2.value = 12
-node2.next = node3
-
-linkedList1.addToTail(25)
-new Node(25)
-node3.value = 25
-node3.next = node4
-
-linkedList1.addToTail(42)
-new Node(42)
-node4.value = 42
-node4.next = null
-
-
-
-
-*/
