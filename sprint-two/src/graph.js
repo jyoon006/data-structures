@@ -11,8 +11,11 @@ var Graph = function() {
 // ------------------------
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node){
-  this.count++;
-  this.nodes[this.count] = new Node(node);
+  if (!this.contains(node)){ 
+    this.count++;
+    this.nodes[this.count] = new GraphNode(node);
+    console.log(this.nodes);
+  }
 };
 
 // ------------------------
@@ -29,7 +32,11 @@ Graph.prototype.contains = function(node){
 // ------------------------
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node){
-  
+  for(var key in this.nodes){
+    if (this.nodes[key].value === node) {
+      return true;
+    }
+  }
 };
 
 // ------------------------
@@ -52,7 +59,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
 Graph.prototype.forEachNode = function(cb){
 };
 
-var Node = function(value) {
+var GraphNode = function(value) {
   this.value = value;
 };
 
