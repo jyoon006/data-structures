@@ -24,10 +24,3 @@ var stackMethods =  {
     return temp;
   }
 };
-
-//Stack.size()
-
-
-// it('reports a size of zero for a new stack', function() {
-//         expect(stack.size()).to.equal(0);
-//       });

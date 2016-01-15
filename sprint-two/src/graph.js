@@ -3,22 +3,33 @@
 // ###Graph Solution
 
 // Instantiate a new graph
-var Graph = function(){
+var Graph = function() {
+  this.nodes = {};
+  this.count = 0;
 };
 
 // ------------------------
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node){
+  this.count++;
+  this.nodes[this.count] = new Node(node);
 };
 
 // ------------------------
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node){
+  for(var key in this.nodes){
+    if (this.nodes[key].value === node) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // ------------------------
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node){
+  
 };
 
 // ------------------------
@@ -41,9 +52,10 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
 Graph.prototype.forEachNode = function(cb){
 };
 
+var Node = function(value) {
+  this.value = value;
+};
+
 /*
  * Complexity: What is the time complexity of the above functions?
  */
-
-
-
