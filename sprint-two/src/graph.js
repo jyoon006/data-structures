@@ -34,9 +34,11 @@ Graph.prototype.contains = function(node){
 Graph.prototype.removeNode = function(node){
   for(var key in this.nodes){
     if (this.nodes[key].value === node) {
+      delete this.nodes[key];
       return true;
     }
   }
+  return false;
 };
 
 // ------------------------
