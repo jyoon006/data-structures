@@ -20,7 +20,16 @@ var LinkedList = function(){
   };
 
   list.removeHead = function(){
-
+    // runs if there is a head
+    if (list.head !== null) {
+      // creates a temp variable to hold the value of the head
+      var temp = list.head.value;
+      // sets the new head to point to the current head's next
+      list.head = list.head.next;
+    }
+    // returns undefined if there was no head the the previous
+    // heads value if there was
+    return temp;
   };
 
   list.contains = function(target){
