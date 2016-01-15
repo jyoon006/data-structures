@@ -23,7 +23,7 @@ Graph.prototype.contains = function(node) {
     return true;
   }
   else {
-  	return false;
+    return false;
   }
 };
 
@@ -36,12 +36,17 @@ Graph.prototype.removeNode = function(node){
 // ------------------------
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode){
+  if(this.nodes[JSON.stringify(fromNode)].nodes[JSON.stringify(toNode)]) {
+    return true;
+  }
+  return false;
 };
 
 // ------------------------
 // Connects two nodes in a graph by adding an edge between them.
 Graph.prototype.addEdge = function(fromNode, toNode) {
-  console.log(this.nodes);
+  this.nodes[JSON.stringify(fromNode)].addNode(toNode);
+  this.nodes[JSON.stringify(toNode)].addNode(fromNode);
 };
 
 // ------------------------
@@ -52,6 +57,7 @@ Graph.prototype.removeEdge = function(fromNode, toNode){
 // ------------------------
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb){
+  
 };
 
 /*
