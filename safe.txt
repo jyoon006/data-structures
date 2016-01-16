@@ -12,3 +12,14 @@ bst.left new BinarySearchTree(3);
 
 bst.left.value = 3;
 bst.left.left =
+
+var Restaurants = function (name, address, zagat){
+  this.name: name;
+  this.address: address;
+  this.zagat: zagat;
+}
+
+var r1 = new Restaurant('Pizza Hut', '254 1st St', 2.3);
+var r2 = new Restaurant('Ruth's Chris', '123 Not Rd', 7.9);
+
+r1 < r2
