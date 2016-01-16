@@ -49,7 +49,6 @@ HashTable.prototype.remove = function(key){
         if(item[j]) {
           if (item[j][0] === key) {
             context._count--;
-            console.log('decreased');
             item.splice(j, 1);
             if(context._count < context._limit * .25) {
               context._resize(context._limit/2);
