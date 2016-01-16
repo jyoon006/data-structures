@@ -5,19 +5,28 @@ var HashTable = function(){
 
 HashTable.prototype.insert = function(key, value){
   var i = getIndexBelowMaxForKey(key, this._limit);
-  this._storage.set(i, value);
+  this._storage.set(i, [key, value]);
 };
 
 HashTable.prototype.retrieve = function(key){
   var i = getIndexBelowMaxForKey(key, this._limit);
-  return this._storage.get(i);
+  // return this._storage.get(i)[1];
+  if(this._storage.get(i)) {   
+    return this._storage.get(i)[1];
+  }
+  else {
+    return null;
+  }
 };
 
 HashTable.prototype.remove = function(key){
   var value = this.retrieve(key);
   this._storage.each(function (item, index, array) {
-    if(item === value ) {
-      array[index] = null;
+    if(item) {
+      console.log(item[1], array[index]);
+      if(item[1] == value ) {
+        array[index] = null;
+      }
     }  
   });
 };
