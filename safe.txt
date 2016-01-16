@@ -1,17 +1,14 @@
-val1 // hash 5
-val2 // hash 5+1
-insert('val1', 'Spielberg')
-hash('val1') -> 0;
-[['val1', 'Spielberg'], ['val2'   , 'Abrams']  ,      undefined      ]<-- 
-          0                       1                     2
-          
-insert('val2', 'Lucas')
-hash -> 0
-hash('val2') + 1 -> 1
 
-storage.get(1) ? defined
-storage.get(1)[0] ? 'val2'
+ var bst = new BinarySearchTree(5);
+ 
+ bst.value = 5;
+ bst.left = undefined;
+ bst.right = undefined;
+ 
+bst.insert(3);
+3 < 5 ? yes
+bst.left defined ? no
+bst.left new BinarySearchTree(3);
 
-insert('val2', 'Abrams')
-
-[[[val1, Spielberg][val2,Lucas]], undefined]
+bst.left.value = 3;
+bst.left.left =
