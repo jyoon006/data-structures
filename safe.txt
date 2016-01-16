@@ -1,18 +1,3 @@
-100 different items with different keys, but all keys have same hash of 2
-limit = 8;
-
-[ [1] , [1] , [1] , [1] , [1] , [1] , [0] , [0] ] -> limit = 16;
-
-[ [1] , [1] , [1] , [1] , [1] , [1] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] ] 
-
-
-[ [1] , [0] , [1] , [0] , [1] , [0] , [1] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] ] 
-
-
-var checkLimit = function(index){
-    if(typeof index !== 'number'){ throw new Error('setter requires a numeric index for its first argument'); }
-    if(limit <= index){ throw new Error('Error trying to access an over-the-limit index'); }
-  };
-
-limit = 8;
-'asdfjksadfjksdafsfhkshfsdhf' = 9
+var double = function (value) {
+  value = value * 2;
+}
