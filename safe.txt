@@ -1,25 +1,18 @@
+100 different items with different keys, but all keys have same hash of 2
+limit = 8;
 
- var bst = new BinarySearchTree(5);
- 
- bst.value = 5;
- bst.left = undefined;
- bst.right = undefined;
- 
-bst.insert(3);
-3 < 5 ? yes
-bst.left defined ? no
-bst.left new BinarySearchTree(3);
+[ [1] , [1] , [1] , [1] , [1] , [1] , [0] , [0] ] -> limit = 16;
 
-bst.left.value = 3;
-bst.left.left =
+[ [1] , [1] , [1] , [1] , [1] , [1] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] ] 
 
-var Restaurants = function (name, address, zagat){
-  this.name: name;
-  this.address: address;
-  this.zagat: zagat;
-}
 
-var r1 = new Restaurant('Pizza Hut', '254 1st St', 2.3);
-var r2 = new Restaurant('Ruth's Chris', '123 Not Rd', 7.9);
+[ [1] , [0] , [1] , [0] , [1] , [0] , [1] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] , [0] ] 
 
-r1 < r2
+
+var checkLimit = function(index){
+    if(typeof index !== 'number'){ throw new Error('setter requires a numeric index for its first argument'); }
+    if(limit <= index){ throw new Error('Error trying to access an over-the-limit index'); }
+  };
+
+limit = 8;
+'asdfjksadfjksdafsfhkshfsdhf' = 9
