@@ -20,16 +20,21 @@ BinarySearchTree.prototype.insert = function(value, tree){
   }
 }
 
-// binarySearchTree.insert(2);
-//     console.log(binarySearchTree);
-//     binarySearchTree.insert(3);
-//     binarySearchTree.insert(7);
-//     binarySearchTree.insert(6);
-//     expect(binarySearchTree.left.right.value).to.equal(3);
-//     expect(binarySearchTree.right.left.value).to.equal(6);
-
-BinarySearchTree.prototype.contains = function(value){
-  return true;
+BinarySearchTree.prototype.contains = function(value, tree){
+  tree = tree || this;
+  if (tree.value === value) {
+    return true;
+  }
+  if (value < tree.value) {
+    if(tree.left) {
+      return tree.contains(value, tree.left);
+    }
+    return false;  
+  }
+  if (tree.right) {
+    return tree.contains(value, tree.right);
+  }
+  return false;
 }
 
 BinarySearchTree.prototype.depthFirstLog = function(cb){
