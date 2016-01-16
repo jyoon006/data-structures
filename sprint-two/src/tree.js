@@ -25,8 +25,15 @@ treeMethods.contains = function(target){
   return false;
 };
 
-treeMethods.traverse = function(cb) {
-  
+treeMethods.traverse = function(cb, tree) {
+  tree = tree || this;
+  if(tree.value) {
+    cb(tree.value);
+  }
+
+  for (var i = 0; i < tree.children.length; i++) {
+    tree.traverse(cb, tree.children[i]);
+  }
 };
 
 

@@ -45,36 +45,40 @@ describe('tree', function() {
       tree = Tree();
     });
     
-    var double = function (value) {
-      value = value * 2;
-    };
-    
     it('should have method named "traverse"', function() {
       expect(tree.traverse).to.be.a("function");
     });
 
     it('should call a cb function on every value contained in tree', function() {
+      var results = [];
+      var cbDouble = function (value) {
+        results.push(value * 2);
+      };
       tree.addChild(2);
       tree.addChild(8);
       tree.addChild(27);
       tree.addChild(3);
-      tree.traverse(double)
-      expect(tree.children[0].value).to.equal(4);
-      expect(tree.children[1].value).to.equal(16);
-      expect(tree.children[2].value).to.equal(54);
-      expect(tree.children[3].value).to.equal(6);
+      tree.traverse(cbDouble)
+      expect(results[0]).to.equal(4);
+      expect(results[1]).to.equal(16);
+      expect(results[2]).to.equal(54);
+      expect(results[3]).to.equal(6);
     });
     
     it('should be able to traverse on trees that have nested trees', function() {
+      var results = [];
+      var cbDouble = function (value) {
+        results.push(value * 2);
+      };
       tree.addChild(5);
       tree.addChild(6);
       tree.children[0].addChild(7);
       tree.children[1].addChild(8); 
-      tree.traverse(double);
-      expect(tree.children[0].value).to.equal(10);
-      expect(tree.children[1].value).to.equal(12);
-      expect(tree.children[0].children[0].value).to.equal(14);
-      expect(tree.children[1].children[0].value).to.equal(16);    
+      tree.traverse(cbDouble);
+      expect(results[0]).to.equal(10);
+      expect(results[1]).to.equal(14);
+      expect(results[2]).to.equal(12);
+      expect(results[3]).to.equal(16);    
     });
   });
   
