@@ -7,15 +7,17 @@ var Set = function(){
 var setPrototype = {};
 
 setPrototype.add = function(item){
-  this._storage.insert(item, item);
+  if (!(typeof item === "object" && Object.keys(item).length < 1)) {
+    this._storage.insert(JSON.stringify(item), item);
+  }
 };
 
 setPrototype.contains = function(item){
-  return (!!this._storage.retrieve(item) || (this._storage.retrieve(item) === 0));
+  return (!!this._storage.retrieve(JSON.stringify(item)) || (this._storage.retrieve(JSON.stringify(item)) === 0));
 };
 
 setPrototype.remove = function(item){
-  delete this._storage.remove(item);
+  delete this._storage.remove(JSON.stringify(item));
 };
 
 /*
