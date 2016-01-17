@@ -1,3 +1,40 @@
-var double = function (value) {
-  value = value * 2;
+
+ var bst = new BinarySearchTree(5);
+ 
+ bst.value = 5;
+ bst.left = undefined;
+ bst.right = undefined;
+ 
+bst.insert(3);
+3 < 5 ? yes
+bst.left defined ? no
+bst.left new BinarySearchTree(3);
+
+bst.left.value = 3;
+bst.left.left =
+
+var Restaurants = function (name, address, zagat){
+  this.name: name;
+  this.address: address;
+  this.zagat: zagat;
 }
+
+var r1 = new Restaurant('Pizza Hut', '254 1st St', 2.3);
+var r2 = new Restaurant('Ruth's Chris', '123 Not Rd', 7.9);
+
+r1 < r2
+
+                 24
+         12                48
+    6         18        32       64
+  2   8     
+  
+  1 -> 1
+  2 -> 2
+  3 -> 2
+  4 -> 3
+  5 -> 3
+  6 -> 3
+  7 -> 3
+  15 -> 4
+  
