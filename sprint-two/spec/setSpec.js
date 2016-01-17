@@ -54,11 +54,13 @@ describe('set', function() {
         expect(set.contains({b: 43})).to.equal(true);
       });
       
-      it('should be able to handle empty object', function() {
+      it('should not add empty object', function() {
         set.add({a: 1});
         set.add({b: 43});
+        set.add({});
         expect(set.contains({a: 1})).to.equal(true);
         expect(set.contains({a: 2})).to.equal(false);
+        expect(set.contains({})).to.equal(false);
       });  
       
   });
